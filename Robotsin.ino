@@ -37,7 +37,7 @@ void setup() {
   // PREPARAR LA COMUNICACION SERIAL
    Serial.begin(115200);
 setupDist();
-//setupRun();
+
  // Inicializacion de temporizadores de tarea
  ts1 = 0;
  t01 = 0;
@@ -54,22 +54,23 @@ setupDist();
 
 
 void loop() {
+  
   //Actualizar tiempo
   T = millis();
+  
   //temporizacion tarea 1
   ts1 = T - t01;
   if (ts1 >= ts1)
   {
-  Medir();
+  Medir();  //Llamamos la tarea Medir
   t01 = T;
   }
-
 
   // Temporizacion tarea 2
  ts2 = T - t02;
  if (ts2 >= Ts2)
  {
-   Run();
+   Run();  //Llamamos la tarea Run
    t02 = T;
  }
 
@@ -77,7 +78,7 @@ void loop() {
   ts3 = T - t03;
   if (ts3 >= ts3)
   {
-  RunMan();
+  RunMan(); //Llamamos la tarea RunMan
   t03 = T;
   }
 
