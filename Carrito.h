@@ -5,7 +5,7 @@ void Run()
   
   if(automatic){ //Establecemos un condicional dependiente de la variable en caso de ser verdadera
 
-     if (distancia <= 20) //Establecemos una condicion de distancia para los motores
+     if (Output <= 20) //Establecemos una condicion de distancia para los motores
      {
      //Enviamos una accion de freno a los motores
      motor1.brake();  

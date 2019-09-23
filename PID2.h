@@ -1,25 +1,31 @@
-#include 
-#define PIN_INPUT 0 
-#define PIN_OUTPUT 3 
+#include <PID_v1.h>
 
 //Define Variables we'll be connecting to 
 double Setpoint, Input, Output; 
+//Establecemos los limites
 
 //Specify the links and initial tuning parameters 
 double Kp=2, Ki=5, Kd=1; 
+
 PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT); 
-void setup() { 
-  
+
+void setupPID() { 
+
  //initialize the variables we're linked to 
- Input = analogRead(PIN_INPUT); 
- Setpoint = 100; 
- 
- //turn the PID on 
+ Input = distancia; 
+ Setpoint = 10; 
+  //turn the PID on 
+
+ myPID.SetOutputLimits(-255, 255);
  myPID.SetMode(AUTOMATIC); 
  } 
- void loop() 
+ void PIDYa() 
  { 
-  Input = analogRead(PIN_INPUT); 
+  Input = distancia; 
   myPID.Compute(); 
-  analogWrite(PIN_OUTPUT, Output); }
-}
+//  Serial.println(distancia);
+  Serial.println(Output);
+
+  
+ }
+  

@@ -38,8 +38,8 @@ void Medir()
   distancia = (float)tiempo / 58.0;
  
   // ENVIAR EL RESULTADO AL MONITOR SERIAL
-  Serial.print(distancia);
-  Serial.println(" cm");
+  //Serial.print(distancia);
+  //Serial.println(" cm");
 
   
 }

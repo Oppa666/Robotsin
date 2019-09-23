@@ -35,13 +35,13 @@ void RunMan()
     if (inputString.startsWith("Aut"))
   
       {
-          automatic = true;
+     //     automatic = true;
       }
   
         if (inputString.startsWith("Man"))
   
       {
-          automatic = false;
+    //      automatic = false;
       }
   
         inputString = "";

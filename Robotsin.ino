@@ -2,11 +2,10 @@
 // -- Librerías ------------------------------------------
 
 
-
-
-#include "ControlMotor.h"
 #include "Ultrasonido.h"
-#include "Carrito.h"
+#include "PID2.h"
+#include "ControlMotor.h"
+//#include "Carrito.h"
 #include "ControlLaviu.h"
 
 // -- Variables de control de tiempo ---------------------
@@ -29,6 +28,11 @@ unsigned long int t02; // Tiempo de la última ejecució
 #define Ts3 1000 // Periodo de la tarea 3
 unsigned long int ts3; // Tiempo parcial (tarea 3)
 unsigned long int t03; // Tiempo de la última ejecución
+
+// Tarea 4: Control PID
+#define Ts4 100 // Periodo de la tarea 4
+unsigned long int ts4; // Tiempo parcial (tarea 4)
+unsigned long int t04; // Tiempo de la última ejecución
 
 void setup() {
 
@@ -70,8 +74,8 @@ void loop() {
  ts2 = T - t02;
  if (ts2 >= Ts2)
  {
-   Run();  //Llamamos la tarea Run
-   t02 = T;
+//  Run();  //Llamamos la tarea Run
+  t02 = T;
  }
 
   //temporizacion tarea 3
@@ -80,6 +84,14 @@ void loop() {
   {
   RunMan(); //Llamamos la tarea RunMan
   t03 = T;
+  }
+
+    //temporizacion tarea 4
+  ts4 = T - t04;
+  if (ts4 >= ts4)
+  {
+  PIDYa(); //Llamamos la tarea PID
+  t04 = T;
   }
 
 
