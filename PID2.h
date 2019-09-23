@@ -23,7 +23,7 @@ void setupPID() {
  { 
   Input = distancia; 
   myPID.Compute(); 
-//  Serial.println(distancia);
+  Serial.println(distancia);
   Serial.println(Output);
 
   

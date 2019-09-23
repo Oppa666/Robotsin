@@ -53,6 +53,11 @@ setupDist();
   // Inicializacion de temporizadores de tarea
  ts3 = 0;
  t03 = 0;
+
+   
+  // Inicializacion de temporizadores de tarea
+ ts4 = 0;
+ t04 = 0;
   
 }
 
