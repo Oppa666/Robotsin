@@ -18,12 +18,12 @@ void TareaPid()
  */
     Input= distancia;
     myPID.Compute();
-    Serial.print(" ");
-    Serial.print(Setpoint);
-    Serial.print(" ");
-    Serial.println(Input);
-    Serial.print(" ");
-    Serial.println(Output);
+//    Serial.print(" ");
+//    Serial.print(Setpoint);
+//    Serial.print(" ");
+//    Serial.println(Input);
+//    Serial.print(" ");
+//    Serial.println(Output);
 
 }
 

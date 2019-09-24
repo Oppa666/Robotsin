@@ -7,10 +7,29 @@ void RunMan()
     
   //Establecems la condicion para el SerialEvent
   if (stringComplete) {
-    Serial.println(inputString);
+//    Serial.println(inputString);
     
 // A continuacion estan todos los comandos que son reconocidos en el Serial Event
 // con sus respectivas acciones
+
+
+    if (inputString.startsWith("Inp"))
+  
+      {
+      Serial.print(Input);
+      }
+
+    if (inputString.startsWith("Set"))
+  
+      {String temp = inputString.substring(3);
+        Setpoint = temp.toInt();
+        Serial.println(Setpoint);
+
+      }
+
+      
+
+
 
     if (inputString.startsWith("Right"))
   
