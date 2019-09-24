@@ -11,11 +11,28 @@ void RunMan()
     
 // A continuacion estan todos los comandos que son reconocidos en el Serial Event
 // con sus respectivas acciones
+
+    if (inputString.startsWith("Right"))
+  
+      {
+          motor1.drive(-255);
+          motor2.drive(40);
+      }
+
+
+    if (inputString.startsWith("Left"))
+  
+      {
+          motor1.drive(-40);
+          motor2.drive(255);
+      }
+
+
     if (inputString.startsWith("Back"))
   
       {
-          motor1.drive(255,100);
-          motor2.drive(-255,100);
+          motor1.drive(255);
+          motor2.drive(-255);
       }
   
     if (inputString.startsWith("Brake"))
@@ -28,8 +45,8 @@ void RunMan()
     if (inputString.startsWith("For"))
   
       {
-          motor1.drive(-255, 100);
-          motor2.drive(255, 100);
+          motor1.drive(-255);
+          motor2.drive(255);
       }
   
     if (inputString.startsWith("Aut"))
