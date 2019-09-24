@@ -1,12 +1,13 @@
 // Planificador de tareas
 // -- Librerías ------------------------------------------
 
-
 #include "Ultrasonido.h"
-#include "PID2.h"
+#include "pid.h"
+//#include "PID2.h"
 #include "ControlMotor.h"
-//#include "Carrito.h"
+#include "Carrito.h"
 #include "ControlLaviu.h"
+
 
 // -- Variables de control de tiempo ---------------------
 unsigned long int T; // Tiempo total (microsegundos)
@@ -79,7 +80,7 @@ void loop() {
  ts2 = T - t02;
  if (ts2 >= Ts2)
  {
-//  Run();  //Llamamos la tarea Run
+             Run();  //Llamamos la tarea Run
   t02 = T;
  }
 
@@ -95,7 +96,8 @@ void loop() {
   ts4 = T - t04;
   if (ts4 >= ts4)
   {
-  PIDYa(); //Llamamos la tarea PID
+  TareaPid();
+  SetupPid(); //Llamamos la tarea PID
   t04 = T;
   }
 

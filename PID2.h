@@ -5,7 +5,9 @@ double Setpoint, Input, Output;
 //Establecemos los limites
 
 //Specify the links and initial tuning parameters 
-double Kp=2, Ki=5, Kd=1; 
+double Kp=100;
+double Ki=50;
+double Kd=15; 
 
 PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT); 
 
@@ -25,7 +27,7 @@ void setupPID() {
   myPID.Compute(); 
   Serial.println(distancia);
   Serial.println(Output);
-
-  
+      motor1.drive(Output);
+      motor2.drive(Output);
  }
   
