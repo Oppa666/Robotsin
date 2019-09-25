@@ -3,7 +3,6 @@
 
 #include "Ultrasonido.h"
 #include "pid.h"
-//#include "PID2.h"
 #include "ControlMotor.h"
 #include "Carrito.h"
 #include "ControlLaviu.h"
