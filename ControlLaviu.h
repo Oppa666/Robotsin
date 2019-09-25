@@ -16,7 +16,7 @@ void RunMan()
     if (inputString.startsWith("Inp"))
   
       {
-      Serial.print(Input);
+      Serial.println(distancia);
       }
 
     if (inputString.startsWith("Set"))
